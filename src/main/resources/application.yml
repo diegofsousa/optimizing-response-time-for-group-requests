@@ -31,5 +31,5 @@ feign:
     
 external:
     deck: 
-      url: https://<url>
+      url: https://deckofcardsapi.com/api
     
