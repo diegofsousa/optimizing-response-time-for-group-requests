@@ -49,4 +49,10 @@ public class DeckViewDTO {
 		this.remaining = remaining;
 	}
 
+	@Override
+	public String toString() {
+		return "DeckViewDTO [success=" + success + ", deckId=" + deckId + ", shuffled=" + shuffled + ", remaining="
+				+ remaining + "]";
+	}
+
 }

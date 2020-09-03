@@ -1,5 +1,8 @@
 package dev.diegofernando.optimizingrequests.controller;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +37,17 @@ public class MainController {
 	@GetMapping("/future")
 	public ResponseEntity<?> getFutureRequests() {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getFutureRequests());
+	}
+
+	@GetMapping("/async")
+	public ResponseEntity<?> getAsyncRequests() throws InterruptedException, ExecutionException, TimeoutException {
+		return ResponseEntity.status(HttpStatus.OK).body(service.getFeignRetrofitRequests());
+	}
+
+	@GetMapping("/spring-async")
+	public ResponseEntity<?> getSpringAsyncRequests()
+			throws InterruptedException, ExecutionException, TimeoutException {
+		return ResponseEntity.status(HttpStatus.OK).body(service.getSpringAsync());
 	}
 
 }

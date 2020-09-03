@@ -1,5 +1,7 @@
 package dev.diegofernando.optimizingrequests.api.feign;
 
+import java.util.concurrent.Future;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,5 +17,8 @@ public interface DeckFeignClient {
 
 	@GetMapping("/deck/new/")
 	DeckViewDTO newDeck();
+
+	@GetMapping("/deck/new/")
+	Future<DeckViewDTO> newFutureDeck();
 
 }
