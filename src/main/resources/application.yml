@@ -16,3 +16,20 @@ spring:
 logging:
   level:
     root: INFO
+    
+feign:
+  httpclient:
+    disableSslValidation: true
+    enabled: false
+  okhttp:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 7000
+        readTimeout: 7000
+    
+external:
+    deck: 
+      url: https://<url>
+    
