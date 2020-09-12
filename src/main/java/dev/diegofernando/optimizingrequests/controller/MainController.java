@@ -29,19 +29,9 @@ public class MainController {
 		return ResponseEntity.status(HttpStatus.OK).body(service.getNormalRequests());
 	}
 
-	@GetMapping("/countdown")
-	public ResponseEntity<?> getCountdownRequests() {
-		return ResponseEntity.status(HttpStatus.OK).body(service.getCountdownRequests());
-	}
-
-	@GetMapping("/future")
-	public ResponseEntity<?> getFutureRequests() {
-		return ResponseEntity.status(HttpStatus.OK).body(service.getFutureRequests());
-	}
-
 	@GetMapping("/async")
 	public ResponseEntity<?> getAsyncRequests() throws InterruptedException, ExecutionException, TimeoutException {
-		return ResponseEntity.status(HttpStatus.OK).body(service.getFeignRetrofitRequests());
+		return ResponseEntity.status(HttpStatus.OK).body(service.getAsyncFeignRequests());
 	}
 
 	@GetMapping("/spring-async")

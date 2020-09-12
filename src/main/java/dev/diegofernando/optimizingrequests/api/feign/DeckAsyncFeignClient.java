@@ -10,7 +10,7 @@ import feign.RequestLine;
  * @since 03/09/2020
  */
 
-public interface DeckFeignRetrofitClient {
+public interface DeckAsyncFeignClient {
 
 	@RequestLine("GET /deck/new/")
 	CompletableFuture<DeckViewDTO> newDeck();
